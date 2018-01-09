@@ -9,8 +9,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/get-data', function(req, res, next) {
-  var data = userData.find({});
-  data.on('success', function(docs) {
+  var data = userData.find({}).then('success', function(docs) {
     res.render('index', {items: docs});
   });
 });
@@ -36,14 +35,18 @@ router.post('/update', function(req, res, next) {
   var id = req.body.id;
 
   // userData.update({"_id": db.id(id)}, item);
-  userData.updateById(id, item);
+  userData.update({_id: id}, { 
+    title: req.body.title,
+    content: req.body.content,
+    author: req.body.author
+  }) ;
 });
 
 router.post('/delete', function(req, res, next) {
   var id = req.body.id;
 
   // userData.remove({"_id": db.id(id)});
-  userData.removeById(id);
+  userData.remove(id);
 });
 
 module.exports = router;
