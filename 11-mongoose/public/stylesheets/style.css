@@ -26,24 +26,28 @@ section:last-of-type {
 }
 
 section h3 {
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid white;
   padding-bottom: 5px;
 }
 
 .insert {
   background: #2ecc71;
+  color: white;
 }
 
 .get {
   background: #ecf0f1;
+  color: black;
 }
 
 .update {
   background: #3498db;
+  color: white;
 }
 
 .delete {
   background: #e74c3c;
+  color: white;
 }
 
 .input label {
