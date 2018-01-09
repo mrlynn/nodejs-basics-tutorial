@@ -3,15 +3,15 @@ var router = express.Router();
 var mongoose = require('mongoose');
 mongoose.connect('localhost:27017/test');
 
+var mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost:27017/test',{useMongoClient: true});
 
 var Schema = mongoose.Schema;
-
 var userDataSchema = new Schema({
-  title: {type: String, required: true},
-  content: String,
-  author: String
+   title: {type: String, required: true},
+   content: String,
+   author: String
 }, {collection: 'user-data'});
-
 var UserData = mongoose.model('UserData', userDataSchema);
 
 /* GET home page. */
