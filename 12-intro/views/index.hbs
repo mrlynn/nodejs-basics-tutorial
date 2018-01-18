@@ -1,0 +1,14 @@
+<h1>{{title}}</h1>
+<p>Welcome to {{title}}</p>
+<section class="get">
+    <div>
+        {{# each items }}
+            <article class="item">
+                <div class="form-control">Title: {{ this.title }}</div>
+                <div class="form-control">Content: {{ this.content }}</div>
+                <div class="form-control">Author: {{ this.author }}</div>
+                <div class="form-control">ID: {{ this._id }}</div>
+            </article>
+        {{/each}}
+    </div>
+</section>
